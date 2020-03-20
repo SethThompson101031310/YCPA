@@ -94,7 +94,7 @@ bc{1}.s(1).paras = {mag,phi,omega,betap,t0,st,s,y0,sty,'s'};
 Plot.y0 = round(y0/dx);
 
 bc{1}.xm.type = 'a';
-bc{1}.xp.type = 'a';
+bc{1}.xp.type = 'e';
 bc{1}.ym.type = 'a';
 bc{1}.yp.type = 'a';
 
@@ -104,17 +104,6 @@ pml.m = 3.5;
 Reg.n  = 1;
 Reg.xoff{1} = 0;
 Reg.yoff{1} = 0;
-
-% Defining another start point right beside the first
-bc{2}.NumS = 1;
-bc{2}.s(1).xpos = nx{1}/(4) + 1;
-bc{2}.s(1).type = 'ss';
-bc{2}.s(1).fct = @PlaneWaveBC;
-
-bc{2}.xm.type = 'a';
-bc{2}.xp.type = 'a';
-bc{2}.ym.type = 'a';
-bc{2}.yp.type = 'a';
 
 RunYeeReg
 
